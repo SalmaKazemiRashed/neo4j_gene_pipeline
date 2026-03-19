@@ -29,57 +29,17 @@ This design is better than flat features linked to each node as it is scalable a
 ### CSV file
 The csv file has following format.
 ```plaintext
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+['EntrezGene ID', 'EntrezGene Symbols', 'GenBank Accession ', 'Aliases', 'description', 'Count decrease A', 'Area increase A', 'Count decrease B', 'Area increase B', 'Count decrease C', 'Area increase C', 'Count decrease D', 'Area increase D']
+   entrezgene_id entrezgene_symbols genbank_accession  \
+0           7272                TTK         NM_003318   
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+                                 aliases         description  \
+0  TTK;CT96;ESK;FLJ38280;MPS1;MPS1L1;PYT  TTK protein kinase   
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>entrezgene_id</th>
-      <th>entrezgene_symbols</th>
-      <th>genbank_accession</th>
-      <th>aliases</th>
-      <th>description</th>
-      <th>count_decrease_a</th>
-      <th>area_increase_a</th>
-      <th>count_decrease_b</th>
-      <th>area_increase_b</th>
-      <th>count_decrease_c</th>
-      <th>area_increase_c</th>
-      <th>count_decrease_d</th>
-      <th>area_increase_d</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>7272</td>
-      <td>TTK</td>
-      <td>NM_003318</td>
-      <td>TTK;CT96;ESK;FLJ38280;MPS1;MPS1L1;PYT</td>
-      <td>TTK protein kinase</td>
-      <td>0.512461</td>
-      <td>1.093648</td>
-      <td>0.713287</td>
-      <td>1.157135</td>
-      <td>0.700742</td>
-      <td>1.048722</td>
-      <td>0.708258</td>
-      <td>1.125556</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+   count_decrease_a  area_increase_a  count_decrease_b  area_increase_b  \
+0          0.512461         1.093648          0.713287         1.157135   
+
+   count_decrease_c  area_increase_c  count_decrease_d  area_increase_d  
+0          0.700742         1.048722          0.708258         1.125556
 ```
+
