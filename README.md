@@ -29,8 +29,8 @@ This design is better than flat features linked to each node as it is scalable a
 ### CSV file
 The csv file has following format.
 ```plaintext
-entrezgene_id | entrezgene_symbols | genbank_accession | aliases | description| count_decrease_a | area_increase_a  |count_decrease_b | area_increase_b | count_decrease_c | area_increase_c |  count_decrease_d |  area_increase_d |
-|-------|-----|----------|-----|-------|-----|----------|-----|-------|-----|----------|-----|-----|
-|7272 | TTK | NM_003318 | TTK;CT96;ESK;FLJ38280;MPS1;MPS1L1;PYT | TTK protein kinase |0.512461|1.093648|0.713287|1.157135|0.700742|1.048722|0.708258|1.125556|
+| entrezgene_id | entrezgene_symbols | genbank_accession | aliases                                   | description        | count_decrease_a | area_increase_a | count_decrease_b | area_increase_b | count_decrease_c | area_increase_c | count_decrease_d | area_increase_d |
+|---------------|-------------------|-------------------|--------------------------------------------|--------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|
+| 7272          | TTK               | NM_003318         | TTK;CT96;ESK;FLJ38280;MPS1;MPS1L1;PYT      | TTK protein kinase | 0.512461         | 1.093648         | 0.713287         | 1.157135         | 0.700742         | 1.048722         | 0.708258         | 1.125556         |
 ```
 
