@@ -64,8 +64,9 @@ After data ingestion we have defined  different functions in [queries](queries.p
 ```bash
 uvicorn main:app --reload
 ```
-uvicorn is runnable on http://127.0.0.1:8000 and each function result is asscessible at its own endpoint such as http://127.0.0.1:8000/top-genes 
-![](static_/top_genes.png)
+uvicorn is runnable on http://127.0.0.1:8000 and each function result is asscessible at its own endpoint such as http://127.0.0.1:8000/averages 
+
+![](static_/Average.png)
 
 or functions with input on
 e.g., http://127.0.0.1:8000/filter?area_min=0.5&area_max=5&count_min=-5&count_max=0.
