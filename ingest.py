@@ -64,5 +64,25 @@ def ingest():
         "D_ai": float(row["area_increase_d"])
     })
 
+# -----------------------------
+# store gene Averages
+# -----------------------------
+def store_gene_averages():
+    query = """
+    MATCH (g:Gene)-[:MEASURED_IN]->(m:Measurement)
+    WITH g,
+         avg(CASE WHEN m.exp IN ["A","B"] THEN m.area_increase END) AS avg_AB_area,
+         avg(CASE WHEN m.exp IN ["A","B"] THEN m.count_decrease END) AS avg_AB_count,
+         avg(CASE WHEN m.exp IN ["C","D"] THEN m.area_increase END) AS avg_CD_area,
+         avg(CASE WHEN m.exp IN ["C","D"] THEN m.count_decrease END) AS avg_CD_count
+
+    SET g.avg_AB_area = avg_AB_area,
+        g.avg_AB_count = avg_AB_count,
+        g.avg_CD_area = avg_CD_area,
+        g.avg_CD_count = avg_CD_count
+    """
+    db.run(query)  
+
 if __name__ == "__main__":
     ingest()
+    store_gene_averages()
