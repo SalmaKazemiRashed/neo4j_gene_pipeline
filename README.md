@@ -34,3 +34,43 @@ The csv file has following format.
 | 7272          | TTK               | NM_003318         | TTK;CT96;ESK;FLJ38280;MPS1;MPS1L1;PYT      | TTK protein kinase | 0.512461         | 1.093648         | 0.713287         | 1.157135         | 0.700742         | 1.048722         | 0.708258         | 1.125556         |
 ```
 
+For converting the csv data into neo4j graph, we have defined the graph object on neo4j Desktop, set a username (neo4j) and personal password.
+Then by defining the neo4j [client](neo4j_client.py) we make connection to the database.[Ingest](ingest.py) function transfer all data in .csv file to graph data with following design.
+
+We have 90604 total nodes calculated with following query:
+
+```cypher
+MATCH (n)
+RETURN count(n) AS total_nodes
+```
+using neo4j browser console.
+
+and 144960 edges (relationships)
+```cypher
+MATCH ()-[r]->()
+RETURN count(r) AS total_relationships
+```
+
+The total number of nodes in our graph would be :
+
+```plaintext
+Measurements = 4 × Genes
+MEASURED_IN edges = 4 × Genes
+FROM_EXPERIMENT edges = 4 × Genes
+Experiments = 4 (A,B,C,D)
+```
+
+After data ingestion we have defined  different functions in [queries](queries.py) runnable through fastapi app:
+```bash
+uvicorn main:app --reload
+```
+uvicorn is runnable on http://127.0.0.1:8000 and each function result is asscessible at its own endpoint such as http://127.0.0.1:8000/top-genes 
+![](static_/top_genes.png)
+
+or functions with input on
+e.g., http://127.0.0.1:8000/filter?area_min=0.5&area_max=5&count_min=-5&count_max=0.
+
+
+
+We also visualized graph through neo4j browser and a small subgraph of our data is as following:
+![](static_/graph.png)
