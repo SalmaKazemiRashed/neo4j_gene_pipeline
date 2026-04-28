@@ -1,7 +1,7 @@
 (function () {
   window.PredictSDK = {
     track: function (event, data = {}) {
-      fetch("https://your-app.onrender.com/events", {
+      fetch("https://ai-tracker-widget.onrender.com/events", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
