@@ -3,7 +3,7 @@ async function loadWidget() {
 
   try {
     const res = await fetch(
-      `https://ai-tracker-widget.onrender.com/predict/${userId}`
+      `https://ai-tracker-widget-1.onrender.com/predict/${userId}`
     );
     const data = await res.json();
 
